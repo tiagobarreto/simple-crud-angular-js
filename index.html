@@ -1,0 +1,61 @@
+<!doctype html>
+<html ng-app>
+  <head>
+		<title>Lista de compras com AngularJS</title>
+    <meta charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/lista-compras.css">
+		<script src="lib/angular-1.0.1.js"></script>
+		<script src="app/lista-compras.js"></script>
+	</head>
+  <body>
+		<div class="container" ng-controller="ListaComprasController">
+			<div class="row">
+				<div class="page-header">
+          <div class="span9">
+            <h1>Lista de compras</h1>
+          </div>
+          <div class="span3">
+            <input type="search" ng-model="search" placeholder="Buscar por...">
+          </div>
+				</div>
+			</div>
+			<div class="row">
+        <table id="lista-compras" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Comprado?</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in itens | filter:search" class="comprado-{{ item.comprado }}">
+              <td><input type="checkbox" ng-model="item.comprado"></td>
+              <td><strong>{{ item.produto }}</strong></td>
+              <td>{{ item.quantidade }}</td>
+              <td>
+                <button class="btn btn-warning btn-small" ng-click="editarItem($index)">
+                  <i class="icon-pencil icon-white"></i> editar
+                </button>
+                <button class="btn btn-danger btn-small" ng-click="deleteItem($index)">
+                  <i class="icon-trash icon-white"></i> deletar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+			</div>
+      <div class="row form-inline">
+          <input type="text" ng-model="item.produto" placeholder="Produto">
+          <input type="number" ng-model="item.quantidade" placeholder="Quantidade" class="input-small">
+          <button ng-hide="edit" class="btn btn-success" ng-click="adicionaItem()">
+            <i class="icon-plus icon-white"></i> adicionar
+          </button>
+          <button ng-show="edit" class="btn btn-success" ng-click="applyChanges()">
+            <i class="icon-ok icon-white"></i> salvar
+          </button>
+      </div>
+		</div>
+	</body>
+</html>
