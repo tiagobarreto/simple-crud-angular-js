@@ -118,14 +118,14 @@ Add products in <b>view</b>:
 
 Functions in <b>controller</b>:
 
-<code>Without HTTP Request</code>
+<code>Add item in the items array</code>
 <pre>
 	$scope.addItem = function () {
     	$scope.items.push({product: $scope.item.product, amount: $scope.item.amount, purchase: false});
 	};
 </pre>
 
-<code>With HTTP Request</code>
+<code>Add item with HTTP Request</code>
 
 <pre>
 	$scope.addItem = function(product) {
