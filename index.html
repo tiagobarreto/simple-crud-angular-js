@@ -46,16 +46,16 @@
       </tbody>
     </table>
   </div>
-  <div class="row form-inline">
-    <input type="text" ng-model="item.produto" placeholder="Produto">
-    <input type="number" ng-model="item.quantidade" placeholder="Quantidade" class="input-small">
-    <button ng-hide="edit" class="btn btn-success" ng-click="adicionaItem()">
+  <form class="row form-inline" name="validarValoresPreenchidos">
+    <input type="text" ng-model="item.produto" placeholder="Produto" required>
+    <input type="number" ng-model="item.quantidade" placeholder="Quantidade" class="input-small" required>
+    <button ng-hide="edit" class="btn btn-success" ng-disabled="validarValoresPreenchidos.$invalid" ng-click="adicionaItem()">
       <i class="icon-plus icon-white"></i> adicionar
     </button>
-    <button ng-show="edit" class="btn btn-success" ng-click="applyChanges()">
+    <button ng-show="edit" class="btn btn-success" ng-disabled="validarValoresPreenchidos.$invalid" ng-click="applyChanges()">
       <i class="icon-ok icon-white"></i> salvar
     </button>
-  </div>
+  </form>
 </div>
 </body>
 </html>
