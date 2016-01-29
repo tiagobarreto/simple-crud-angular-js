@@ -74,6 +74,8 @@ List Products in View
 -----------------------------------
 Show products in <b>view</b>:
 
+![List Products](https://github.com/tiagobarreto/simple-crud-angular-js/blob/master/img/docs/list-products.png)
+
 <pre>
 	&lt;div ng-controller="ListaComprasController"&gt;
 		&lt;table&gt;
@@ -96,6 +98,8 @@ Show products in <b>view</b>:
 Filter Products in View
 -----------------------------------
 Added the filter attr in the ng-repeat to enabled filter:
+
+![Filter Product](https://github.com/tiagobarreto/simple-crud-angular-js/blob/master/img/docs/filter-products.png)
 
 <code>&lt;tr ng-repeat="item in items | filter:search"&gt;</code>
 
@@ -159,6 +163,8 @@ Function to delete item in <b>Controller</b>
 
 Edit Products
 -----------------------------------
+![Edit Product](https://github.com/tiagobarreto/simple-crud-angular-js/blob/master/img/docs/edit-products.png)
+
 Edit products used the main button from form to change the product with the <code>ng-hide</code> and <code>ng-show</code> in view:
 
 <pre>
