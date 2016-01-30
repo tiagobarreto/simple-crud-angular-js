@@ -45,6 +45,8 @@ Below the basic example with angular js:
 	&lt;html&gt;
 </pre>
 
+See [JSFiddle](http://jsfiddle.net/jM2TL/).
+
 List Products in Controller
 -----------------------------------
 Store products in items model defined by <b>controller</b>:
