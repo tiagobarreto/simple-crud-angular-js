@@ -196,3 +196,8 @@ Libs used by example
  
    * <b>Toastr</b>
       * Version: [2.0.0](https://github.com/CodeSeven/toastr/blob/master/toastr.js)
+
+More Details
+--------------------------------------------
+   * <b>Blog</b>
+      * [http://www.tiagobarreto.com/simples-aplicacao-em-angularjs/](http://www.tiagobarreto.com/simples-aplicacao-em-angularjs/)
