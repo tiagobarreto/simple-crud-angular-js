@@ -196,6 +196,9 @@ Libs used by example
  
    * <b>Toastr</b>
       * Version: [2.0.0](https://github.com/CodeSeven/toastr/blob/master/toastr.js)
+      
+   * <b>jQuery</b>
+      * Version: [2.2.0](http://code.jquery.com/jquery-2.2.0.js)
 
 More Details
 --------------------------------------------
