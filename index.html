@@ -4,58 +4,64 @@
   <title>Lista de compras com AngularJS</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/lista-compras.css">
-  <script src="lib/angular-1.0.1.js"></script>
-  <script src="app/lista-compras.js"></script>
+  <link rel="stylesheet" href="css/toastr.css">
+  <link rel="stylesheet" href="css/application.css">
 </head>
 <body>
   <div class="container" ng-controller="ListaComprasController">
-   <div class="row">
-    <div class="page-header">
-      <div class="span9">
-        <h1>Lista de compras</h1>
-      </div>
-      <div class="span3">
-        <input type="search" ng-model="search" placeholder="Buscar por...">
+
+    <div class="row">
+      <div class="page-header">
+        <div class="span9">
+          <h1>Lista de compras</h1>
+        </div>
+        <div class="span3">
+          <input type="search" ng-model="search" placeholder="Buscar por...">
+        </div>
       </div>
     </div>
+
+    <div class="row">
+      <table id="lista-compras" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Comprado?</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in itens | filter:search" class="comprado-{{ item.comprado }}">
+            <td><input type="checkbox" ng-model="item.comprado"></td>
+            <td><strong>{{ item.produto }}</strong></td>
+            <td>{{ item.quantidade }}</td>
+            <td>
+              <button class="btn btn-warning btn-small" ng-click="editarItem($index)">
+                <i class="icon-pencil icon-white"></i> editar
+              </button>
+              <button class="btn btn-danger btn-small" ng-click="deleteItem($index)">
+                <i class="icon-trash icon-white"></i> deletar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <form class="row form-inline" name="validarValoresPreenchidos">
+      <input type="text" ng-model="item.produto" placeholder="Produto" required>
+      <input type="number" ng-model="item.quantidade" placeholder="Quantidade" class="input-small" required>
+      <button ng-hide="edit" class="btn btn-success" ng-disabled="validarValoresPreenchidos.$invalid" ng-click="adicionaItem()">
+        <i class="icon-plus icon-white"></i> adicionar
+      </button>
+      <button ng-show="edit" class="btn btn-success" ng-disabled="validarValoresPreenchidos.$invalid" ng-click="applyChanges()">
+        <i class="icon-ok icon-white"></i> salvar
+      </button>
+    </form>
   </div>
-  <div class="row">
-    <table id="lista-compras" class="table table-striped">
-      <thead>
-        <tr>
-          <th>Comprado?</th>
-          <th>Produto</th>
-          <th>Quantidade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="item in itens | filter:search" class="comprado-{{ item.comprado }}">
-          <td><input type="checkbox" ng-model="item.comprado"></td>
-          <td><strong>{{ item.produto }}</strong></td>
-          <td>{{ item.quantidade }}</td>
-          <td>
-            <button class="btn btn-warning btn-small" ng-click="editarItem($index)">
-              <i class="icon-pencil icon-white"></i> editar
-            </button>
-            <button class="btn btn-danger btn-small" ng-click="deleteItem($index)">
-              <i class="icon-trash icon-white"></i> deletar
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <form class="row form-inline" name="validarValoresPreenchidos">
-    <input type="text" ng-model="item.produto" placeholder="Produto" required>
-    <input type="number" ng-model="item.quantidade" placeholder="Quantidade" class="input-small" required>
-    <button ng-hide="edit" class="btn btn-success" ng-disabled="validarValoresPreenchidos.$invalid" ng-click="adicionaItem()">
-      <i class="icon-plus icon-white"></i> adicionar
-    </button>
-    <button ng-show="edit" class="btn btn-success" ng-disabled="validarValoresPreenchidos.$invalid" ng-click="applyChanges()">
-      <i class="icon-ok icon-white"></i> salvar
-    </button>
-  </form>
-</div>
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/toastr.min.js"></script>
+  <script src="app/controllers.js"></script>
 </body>
 </html>
