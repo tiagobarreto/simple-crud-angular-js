@@ -204,3 +204,7 @@ More Details
 --------------------------------------------
    * <b>Blog</b>
       * [http://www.tiagobarreto.com/simples-aplicacao-em-angularjs/](http://www.tiagobarreto.com/simples-aplicacao-em-angularjs/)
+      
+Other projects
+--------------------------------------------
+   * [Simple Crud with Elixir / Phoenix / Angular JS](https://github.com/tiagobarreto/simple-crud-phoenix)
