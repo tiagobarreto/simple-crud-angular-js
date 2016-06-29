@@ -45,7 +45,7 @@ Below the basic example with angular js:
 	&lt;html&gt;
 </pre>
 
-See [JSFiddle](http://jsfiddle.net/jM2TL/).
+See [JSFiddle](http://jsfiddle.net/jM2TL/3/).
 
 List Products in Controller
 -----------------------------------
@@ -208,3 +208,4 @@ More Details
 Other projects
 --------------------------------------------
    * [Simple Crud with Elixir / Phoenix / Angular JS](https://github.com/tiagobarreto/simple-crud-phoenix)
+   * [Simple Crud with Spring MVC / Angular JS](https://github.com/tiagobarreto/simple-app-spring-mvc-angularjs)
