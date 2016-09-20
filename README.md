@@ -2,10 +2,10 @@ Angular JS: an overview
 =================================================
 This example is upgrade of <b>angular js</b> tutorial from <b>[Tableless](http://tableless.com.br/criando-uma-aplicacao-simples-com-angularjs/#.UlnWzGSLIpQ)</b> by <b>[Davi Ferreira](http://tableless.com.br/?author=7)</b>. Features added in the code: Filter, Delete and Edit Products, complete crud.
 
-Main Diretives
+Brunch.io
 -----------------------------
 
-<code>ng-app (ng-app="project")</code>
+<code>npm install -g brunch</code>
 
 <code>ng-controller (ng-controller="myController")</code>
 
